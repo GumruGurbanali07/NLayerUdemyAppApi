@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NLayer.Core;
+using NLayer.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,8 +21,31 @@ namespace NLayer.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.Entity<ProductFeature>().HasData(new ProductFeature()
+            {
+                Id = 1,
+                Color="Red",
+                Height=100,
+                Width=100,
+                ProductId=1,
+            },
+            new ProductFeature()
+            {
+                Id = 2,
+                Color = "Blue",
+                Height = 100,
+                Width = 100,
+                ProductId = 2,
+            }
+            );
+            
+
+
             base.OnModelCreating(modelBuilder);
         }
+
         
     }
 }
