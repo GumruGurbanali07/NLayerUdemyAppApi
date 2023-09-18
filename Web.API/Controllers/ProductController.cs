@@ -5,11 +5,13 @@ using NLayer.Core.DTOs;
 using NLayer.Core.Models;
 using NLayer.Core.Services;
 using NLayer.Service.Services;
+using Web.API.Filters;
 
 namespace Web.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ValidateFilterAttribute]
     public class ProductController : CustomBaseController
     {
         private readonly IMapper _mapper;

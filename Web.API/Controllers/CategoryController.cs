@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NLayer.Core.Services;
+using Web.API.Filters;
 
 namespace Web.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ValidateFilterAttribute]
     public class CategoryController : CustomBaseController
     {
         private readonly ICategoryServices _services;
