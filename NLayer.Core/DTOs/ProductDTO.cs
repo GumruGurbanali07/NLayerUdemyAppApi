@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core.DTOs
 {
-    internal class ProductDTO
+    public class ProductDTO : BaseDTO
     {
+        public string Name { get; set; }
+        public int Stock { get; set; }
+        public decimal Price { get; set; }
+        public int CategoryId { get; set; }
     }
 }

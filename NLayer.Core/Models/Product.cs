@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NLayer.Core.Models;
 
-namespace NLayer.Core
+namespace NLayer.Core.Models
 {
-    public class Product:BaseEntity
+    public class Product : BaseEntity
     {
         public string Name { get; set; }
         public int Stock { get; set; }

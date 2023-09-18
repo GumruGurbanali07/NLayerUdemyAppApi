@@ -41,10 +41,7 @@ namespace NLayer.Service.Services
             return await _repository.AnyAsync(expression);
         }
 
-        public Task<IEnumerable<T>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core.DTOs
 {
-    internal class ProductFeatureDTO
+    public class ProductFeatureDTO
     {
+        public int Id { get; set; }
+        public string Color { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+        public int ProductId { get; set; }
     }
 }
