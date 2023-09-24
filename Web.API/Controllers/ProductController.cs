@@ -31,17 +31,18 @@ namespace Web.API.Controllers
             var productsDtos = _mapper.Map<List<ProductDTO>>(products.ToList());
             return CreateActionResult(CustomResponseDTO<List<ProductDTO>>.Success(200, productsDtos));
         }
-        [HttpGet("{GetProductWithCategory}")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> GetProductWithCategory()
         {
             return CreateActionResult(await _service.GetProductWithCategory());
         }
 
-
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var product = await _service.GetByIdAsync(id);
+            
             var productsDto = _mapper.Map<ProductDTO>(product);
             return CreateActionResult(CustomResponseDTO<ProductDTO>.Success(200, productsDto));
         }
