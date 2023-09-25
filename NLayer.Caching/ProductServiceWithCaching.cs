@@ -19,28 +19,7 @@ namespace NLayer.Caching
 {
     public class ProductServiceWithCaching : ProductService
     {
-        //private const string CacheProductKey = "productsCache";
-        //private readonly IMapper _mapper;
-        //private readonly IMemoryCache _memoryCache;
-        //private readonly IProductRepository _productRepository;
-        //private readonly IUnitOfWork _unitOfWork;
-        //private readonly IGenericRepository<Product> _repository;
-
-        //public ProductServiceWithCaching(IGenericRepository<Product> repository, IUnitOfWork unitOfWork, IProductRepository productRepository, IMemoryCache memoryCache, IMapper mapper)
-        //{
-        //    _unitOfWork = unitOfWork;
-        //    _productRepository = productRepository;
-        //    _memoryCache = memoryCache;
-        //    _mapper = mapper;
-        //    _repository = repository;
-
-        //    if (!_memoryCache.TryGetValue(CacheProductKey, out _))
-        //    {
-        //        _memoryCache.Set(CacheProductKey, _productRepository.GetProductWithCategory().Result);
-        //    }
-
-
-        //}
+       
         private const string CacheProductKey = "productsCache";
         private readonly IMapper _mapper;
         private readonly IMemoryCache _memoryCache;
